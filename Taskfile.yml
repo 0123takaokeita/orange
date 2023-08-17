@@ -7,12 +7,27 @@ vars:
 
 tasks:
   default:
+    desc: default
     cmds:
       - echo "{{.GREETING}}"
     silent: true
+  run:
+    desc: mainを実行
+    cmds:
+      - go run .
   test:
+    desc: test 実行
     cmds:
       - go test -v ./...
   build:
+    desc: プロジェクトをビルド
     cmds:
       - go build -o bin/
+  cover:
+    desc: テストカバレッジを表示
+    cmds:
+      - go test -coverprofile=coverage.out
+  cover.tool:
+    desc: テストカバレッジをHTMLで表示
+    cmds:
+      - go tool cover -html=coverage.out
