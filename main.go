@@ -1,7 +1,8 @@
 package main
 
 import (
-  "fmt"
+  // "fmt"
+  tasks "orange/cmd/tasks"
 )
 
 func HelloWorld() string {
@@ -9,5 +10,5 @@ func HelloWorld() string {
 }
 
 func main(){
-  fmt.Println(HelloWorld())
+  tasks.ListUp()
 }
